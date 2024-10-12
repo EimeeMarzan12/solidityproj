@@ -10,7 +10,9 @@ totalSupply: Tracks the total number of tokens in circulation.
 Balances Mapping:
 
 A mapping is used to store the balance of each address holding the token. This means that for each Ethereum address, you can see how many tokens that address owns. The format is mapping(address => uint) public balances, where each address maps to a uint representing the balance.
+
 Core Functionalities:
+
 Mint Function:
 The mint function allows new tokens to be created and added to the total supply. It takes two parameters:
 _address: The address to which the newly minted tokens will be assigned.
