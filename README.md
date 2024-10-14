@@ -1,26 +1,52 @@
-Ethereum: Token Minting and Burning Mechanism
+# Project Title
 
-The MyToken project is a simple smart contract written in Solidity that allows the creation, minting, and burning of tokens on the Ethereum blockchain. This contract defines a token called METAES with the abbreviation MTAES. It implements fundamental token functionalities such as minting new tokens to increase supply and burning tokens to reduce supply. These actions directly affect the balances of users who hold the tokens. The project demonstrates how to implement a basic token system and can serve as a foundation for more complex cryptocurrency or token-based applications.
+A simple token smart contract that allows minting and burning of tokens on the Ethereum blockchain.
 
-Public Variables:
+## Description
 
-tokenName: Stores the name of the token, which is "METAES".
-tokenAbbrv: Stores the abbreviation of the token, which is "MTAES".
-totalSupply: Tracks the total number of tokens in circulation.
-Balances Mapping:
+This project implements a basic Ethereum token contract with functionalities to mint new tokens and burn existing tokens. The contract tracks the total token supply and each user's balance using public variables and mappings. The mint function allows increasing the total supply and assigning tokens to a specified address, while the burn function reduces the supply by burning tokens from a user's balance, provided they have enough tokens. It is designed for educational purposes, demonstrating how simple tokenomics can be implemented using Solidity.
 
-A mapping is used to store the balance of each address holding the token. This means that for each Ethereum address, you can see how many tokens that address owns. The format is mapping(address => uint) public balances, where each address maps to a uint representing the balance.
+## Getting Started
 
-Core Functionalities:
+### Installing
 
-Mint Function:
-The mint function allows new tokens to be created and added to the total supply. It takes two parameters:
-_address: The address to which the newly minted tokens will be assigned.
-_value: The number of tokens to mint.
-The function works by increasing the totalSupply by the _value and adding the same _value to the balance of _address.
+* Download or clone the project repository to your local machine.
+* Install Solidity development tools like Remix or Hardhat for compiling and deploying the contract.
+* Deploy the contract on a testnet or a local Ethereum development environment.
 
-Burn Function:
-The burn function allows tokens to be destroyed, reducing the total supply and the balance of a specified address. It takes two parameters:
-_address: The address from which tokens will be burned.
-_value: The number of tokens to burn.
-Before burning, the function checks if the address has enough tokens (i.e., the balance is greater than or equal to the _value to be burned). If the condition is met, it reduces both the totalSupply and the balance of _address by _value.
+### Executing program
+
+* Open Remix IDE (or another Solidity-compatible environment).
+* Paste the contract code into the editor.
+* Compile the contract:
+```
+pragma solidity 0.8.18;
+```
+
+* Deploy the contract on the Ethereum testnet or remix Ethereum IDE website
+* Once deployed, use the functions to mint or burn tokens
+* Test the mint function with entering default account address and a sample value such as 1000
+* Check the totalSupply and balances if it is equal to what you inputted in the mint function
+* Do the same with the burn function with the default account address and a sample value such as 500
+* Check the totalSupply and balances if it is equal to what you inputted in the burn function if it was subtracted
+* Try to test the burn function if it will exceed the amount of tokens to subtract that what is stored
+  
+
+
+## Help
+
+Any advise for common problems or issues.
+*Make sure the Ethereum address used in mint/burn is valid and holds enough tokens before burning.
+
+## Authors
+Eimee Suzanne Marzan
+
+
+Contributors names and contact info
+
+@EimeeMarzan12
+
+
+## License
+
+This project is licensed under the MIT License.
